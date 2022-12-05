@@ -9,11 +9,14 @@ router.get('/', async (req, res) => {
         attributes:[
           'title',
           'content',
+          'date_created'
         ],
 
-      include: [
-        {
-          model: User
+      include: [{
+        model:Comment,
+        attributes:['id','content'],
+          model: User,
+          attributes:['email']
         },
       ],
     }) .then(postData =>{
@@ -24,6 +27,21 @@ router.get('/', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+  router.get('/loginPage', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('loginPage');
+  });
+
+
+
+
+
+
 });
 
 
