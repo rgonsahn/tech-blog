@@ -14,7 +14,7 @@ A website where developers can share posts and comment on blogs from other devel
    * "sequelize": "^6.3.5"  
 
    ## Links 
-
+       https://fast-wildwood-02784.herokuapp.com                               
 
 
    ## Contributions
