@@ -24,19 +24,13 @@ class User extends Model {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
-        // TO DO! how to check the password lenght?
+        len: [10],
+        // checks password length
       },
     },
-    // dateCreated: {
-    //   type: DataTypes.DATEONLY,
-    //   allowNull: false,
-    //   defaultValue: DataTypes.NOW,
-    // },    
+    
   },
   
-  // Hooks are automatic methods that run during various phases of the Pass Model lifecycle
-  // In this case, before a Pass is created or updated, we will automatically hash their password
   {
     hooks: {
       beforeCreate: async (newUserData) => {
